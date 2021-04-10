@@ -1,0 +1,10 @@
+[package]
+name = "project-euler-007"
+version = "0.1.0"
+authors = ["Robbie Blaine <robbieblaine.rb@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies.slow_primes]
+git = "https://github.com/huonw/slow_primes"
