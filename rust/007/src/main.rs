@@ -6,15 +6,12 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 What is the 10 001st prime number?
 */
 
-use slow_primes;
+use primal;
 
 fn main() {
     let nth: u64 = 10001;
-    let (_lo, hi) = slow_primes::estimate_nth_prime(nth);
-    let sieve = slow_primes::Primes::sieve(hi as usize);
+    let (_lo, hi) = primal::estimate_nth_prime(nth);
+    let sieve = primal::Sieve::new(hi as usize);
 
-    match sieve.primes().nth((nth as usize) - 1) {
-        Some(p) => println!("The 10001st prime is {}", p),
-        None => unreachable!(),
-    }
+    println!("The 10'001st prime is {}", sieve.nth_prime(nth as usize));
 }
